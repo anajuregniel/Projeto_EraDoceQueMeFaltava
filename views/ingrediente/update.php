@@ -3,7 +3,8 @@
 
     // Construir o objeto do Ingrediente
     $ingrediente = new Ingrediente();
-    $ingrediente->setNome($_POST['nome']);
+    $ingrediente->setId($_POST['idingrediente']);
+    $ingrediente->setDescricao($_POST['descricao']);
 
     // Atualizar registro no Banco de Dados
     $dao = new IngredienteDAO();

@@ -2,8 +2,8 @@
     // Buscar as informações do cliente para atualizar
     require "../../autoload.php";
 
-    $dao = new ClienteDAO();
-    $cliente = $dao->find($_GET['id']);
+    $dao = new IngredienteDAO();
+    $ingrediente = $dao->find($_GET['id']);
 ?>
 
 <!DOCTYPE html>
@@ -267,9 +267,9 @@
                     <form action="update.php" method="post">
                         <p class="form-group">
                             <label for="descricao">Descrição</label>
-                            <input type="text" name="descricao" class="form-control" value="<?= $descricao->getNome() ?>">
+                            <input type="text" name="descricao" class="form-control" value="<?= $ingrediente->getDescricao() ?>">
                         </p>
-                        <input type="hidden" name="id" value="<?= $descricao->getId() ?>">
+                        <input type="hidden" name="idingrediente" value="<?= $ingrediente->getId() ?>">
                         <p class="form-group">
                             <input type="reset" value="Limpar" class="btn btn-default">
                             <input type="submit" value="Salvar" class="btn btn-primary">

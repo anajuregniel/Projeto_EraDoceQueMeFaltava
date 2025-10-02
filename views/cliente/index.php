@@ -270,11 +270,12 @@
                             <th>Nome</th>
                             <th>Telefone</th>
                             <th>E-mail</th>
+                            <th>Ações</th>
                         </tr>
                         <?php foreach($dao->read() as $cliente) : ?>
                             <tr>
                                 <td><?= $cliente->getId() ?></td>
-                                <td><?= $cliente->getNome() ?></td>
+                                <td><?= $cliente->getNomeCliente() ?></td>
                                 <td><?= $cliente->getTelefone() ?></td>
                                 <td><?= $cliente->getEmail() ?></td>
                                 <td>

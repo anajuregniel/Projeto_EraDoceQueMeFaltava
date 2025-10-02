@@ -268,16 +268,17 @@
                         <tr>
                             <th>ID</th>
                             <th>Descrição</th>
+                            <th>Ações</th>
                         </tr>
                         <?php foreach($dao->read() as $ingrediente) : ?>
                             <tr>
                                 <td><?= $ingrediente->getId() ?></td>
                                 <td><?= $ingrediente->getDescricao() ?></td>
-                                <td>
-                                    <a href="edit.php?id=<?= $descricao->getId() ?>" title="Editar">
+                              <td>
+                                    <a href="edit.php?id=<?= $ingrediente->getId() ?>" title="Editar">
                                         <i class="bi bi-pencil"></i>
                                     </a>
-                                    <a class="link link-danger" href="destroy.php?id=<?= $descricao->getId() ?>" title="Excluir">
+                                    <a class="link link-danger" href="destroy.php?id=<?= $ingrediente->getId() ?>" title="Excluir">
                                         <i class="bi bi-trash"></i>
                                     </a>
                                 </td>

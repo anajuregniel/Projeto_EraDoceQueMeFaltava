@@ -3,10 +3,9 @@
         public function create($cliente) {
             try {
                 $query = BD::getConexao()->prepare(
-                    "INSERT INTO cliente(idCliente,nomeCliente,telefone,email) 
-                     VALUES (:i, :n, :t, :e)"
+                    "INSERT INTO cliente(nomeCliente,telefone,email) 
+                     VALUES (:n, :t, :e)"
                 );
-                $query->bindValue(':i',$cliente->getIdCliente(), PDO::PARAM_STR);
                 $query->bindValue(':n',$cliente->getNomeCliente(), PDO::PARAM_STR);
                 $query->bindValue(':t',$cliente->getTelefone(), PDO::PARAM_STR);
                 $query->bindValue(':e',$cliente->getEmail(), PDO::PARAM_STR);
@@ -31,9 +30,9 @@
                 foreach($query->fetchAll(PDO::FETCH_ASSOC) as $linha) {
                     $cliente = new Cliente();
                     $cliente->setId($linha['id_cliente']);
-                    $cliente->setId($linha['nome_cliente']);
-                    $cliente->setId($linha['telefone']);
-                    $cliente->setId($linha['email']);
+                    $cliente->setNomeCliente($linha['nome_cliente']);
+                    $cliente->setTelefone($linha['telefone']);
+                    $cliente->setEmail($linha['email']);
 
                     array_push($clientes,$cliente);
                 }

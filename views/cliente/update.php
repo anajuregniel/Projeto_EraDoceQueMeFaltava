@@ -3,7 +3,9 @@
 
     // Construir o objeto do Cliente
     $cliente = new Cliente();
-    $cliente->setNome($_POST['nome']);
+    $cliente->setNomeCliente($_POST['nome_cliente']);
+    $cliente->setTelefone($_POST['telefone']);
+    $cliente->setEmail($_POST['email']);
 
     // Atualizar registro no Banco de Dados
     $dao = new ClienteDAO();
